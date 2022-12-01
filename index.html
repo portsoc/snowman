@@ -35,18 +35,59 @@
 
 <p>Definitely needs more Mariah Carey.</p>
 
+<button id="play">Play!</button>
+
 <svg width="500" height="700" viewbox="-250 -550 500 700">
   <circle id="lowertorso" cx="0" cy="0" r="150" class="snow" />
   <circle id="torso" cx="0" cy="-150" r="125" class="snow" />
   <circle id="head" cx="0" cy="-300" r="100" class="snow" />
 
-  <g id="eyes">
-    <circle id="head" cx="-30" r="10" class="coal" />
-    <circle id="head" cx="30" r="10" class="coal" />
-  </g>
+  <defs>
+    <g id="eyes" class="coal">
+      <circle cx="-30" r="10" />
+      <circle cx="30" r="10" />
+    </g>
+  </defs>
+  
+  <use href="#eyes" y="-300"></use>
 
   <g id="arms">
-    <path d="M0,0 L 100,0 M100,20 L80,0 100,-20" transform="translate(60,-170)"></path>
-    <path d="M0,0 L -100,0 M-100,10 L-75,0 -100,-25" transform="translate(-60,-170)"></path>
+    <path id="leftarm" d="M0,0 L 100,0 M100,20 L80,0 100,-20" transform="translate(60,-170)"></path>
+    <path id="rightarm" d="M0,0 L -100,0 M-100,10 L-75,0 -100,-25" transform="translate(-60,-170)"></path>
   </g>
 </svg>
+
+
+<script>
+
+const feels = {
+  happy: 100,
+  hunger: 0,
+  love: 0
+};
+
+function adjustThings() {
+  feels.happy = Math.max(0, --feels.happy);
+  adjustImage();
+}
+
+function adjustImage() {
+  const leftarm = document.querySelector("#leftarm");
+  leftarm.setAttribute("transform", `translate(60,-170) rotate(${-feels.happy+50})`);
+
+  const rightarm = document.querySelector("#rightarm");
+  rightarm.setAttribute("transform", `translate(-60,-170) rotate(${feels.happy-50})`);
+}
+
+
+
+function init() {
+  window.setInterval(adjustThings, 100);
+  document.querySelector("#play").addEventListener('click', () => {feels.happy+=10});
+}
+
+window.addEventListener('load', init);
+
+
+</script>
+
