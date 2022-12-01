@@ -12,6 +12,12 @@
   .coal {
     fill: black;
   }
+
+  #arms {
+    stroke: brown;
+    fill: none;
+    stroke-width: 0.5em;;
+  }
 </style>
 
 <h1>Snowman!</h1>
@@ -26,5 +32,10 @@
   <g id="eyes">
     <circle id="head" cx="-30" cy="-330" r="10" class="coal" />
     <circle id="head" cx="30" cy="-330" r="10" class="coal" />
+  </g>
+
+  <g id="arms">
+    <path d="M0,0 L 100,0 M100,20 L80,0 100,-20" transform="translate(60,-170)"></path>
+    <path d="M0,0 L -100,0 M-100,10 L-75,0 -100,-25" transform="translate(-60,-170)"></path>
   </g>
 </svg>
