@@ -3,3 +3,7 @@ body {
   color: red;
 }
 
+svg {
+  border: dashed red 0.1em;
+}
+
