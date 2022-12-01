@@ -67,9 +67,11 @@
 
 const feels = {
   happy: 100,
-  hunger: 0,
-  love: 0
 };
+
+function play() {
+  feels.happy = Math.min(100, feels.happy + 10);
+}
 
 function adjustThings() {
   feels.happy = Math.max(0, --feels.happy);
@@ -88,7 +90,7 @@ function adjustImage() {
 
 function init() {
   window.setInterval(adjustThings, 100);
-  document.querySelector("#play").addEventListener('click', () => {feels.happy+=10});
+  document.querySelector("#play").addEventListener('click', play);
 }
 
 window.addEventListener('load', init);
