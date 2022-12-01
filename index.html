@@ -18,6 +18,17 @@
     fill: none;
     stroke-width: 0.5em;;
   }
+
+  #eyes {
+    animation: blinking 5s infinite;
+  }
+
+  @keyframes blinking {
+    0% { transform: scale(1, 1); }
+    5% { transform: scale(1, 0.1); }
+    10% { transform: scale(1, 1); }
+    100% { transform: scale(1, 1); }
+  }
 </style>
 
 <h1>Snowman!</h1>
@@ -30,8 +41,8 @@
   <circle id="head" cx="0" cy="-300" r="100" class="snow" />
 
   <g id="eyes">
-    <circle id="head" cx="-30" cy="-330" r="10" class="coal" />
-    <circle id="head" cx="30" cy="-330" r="10" class="coal" />
+    <circle id="head" cx="-30" r="10" class="coal" />
+    <circle id="head" cx="30" r="10" class="coal" />
   </g>
 
   <g id="arms">
