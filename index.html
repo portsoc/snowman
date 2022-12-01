@@ -3,41 +3,16 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Snowman</title>
 <link rel="stylesheet" href="style.css">
+<script defer src="index.js"></script>
 
-<style>
-  .snow {
-    fill: white;
-  }
+<header>
+  <h1>Snowman</h1>
+  <p>When the snowman is happy, he will raise his arms.</p>
+  <p>Playing with the snowman makes him happy.</p>
+  <p>Over time, the snowman's happiness will subside.</p>
+</header>
 
-  .coal {
-    fill: black;
-  }
-
-  #arms {
-    stroke: brown;
-    fill: none;
-    stroke-width: 0.5em;;
-  }
-
-  #eyes {
-    animation: blinking 5s infinite;
-  }
-
-  @keyframes blinking {
-    0% { transform: scale(1, 1); }
-    5% { transform: scale(1, 0.1); }
-    10% { transform: scale(1, 1); }
-    100% { transform: scale(1, 1); }
-  }
-
-  #carrot {
-    fill: orange;    
-  }
-</style>
-
-<h1>Snowman!</h1>
-
-<button id="play">Play!</button>
+<button id="play">Play with the snowman!</button>
 
 <svg width="500" height="700" viewbox="-250 -550 500 700">
   <circle id="lowertorso" cx="0" cy="0" r="150" class="snow" />
@@ -61,40 +36,3 @@
   <path id="carrot" d="m0,0 40,-10 0,-20" transform="translate(-40,-250)"></path> 
 
 </svg>
-
-
-<script>
-
-const feels = {
-  happy: 100,
-};
-
-function play() {
-  feels.happy = Math.min(100, feels.happy + 10);
-}
-
-function adjustThings() {
-  feels.happy = Math.max(0, --feels.happy);
-  adjustImage();
-}
-
-function adjustImage() {
-  const leftarm = document.querySelector("#leftarm");
-  leftarm.setAttribute("transform", `translate(60,-170) rotate(${-feels.happy+50})`);
-
-  const rightarm = document.querySelector("#rightarm");
-  rightarm.setAttribute("transform", `translate(-60,-170) rotate(${feels.happy-50})`);
-}
-
-
-
-function init() {
-  window.setInterval(adjustThings, 100);
-  document.querySelector("#play").addEventListener('click', play);
-}
-
-window.addEventListener('load', init);
-
-
-</script>
-
