@@ -26,7 +26,7 @@ button {
 #arms {
   stroke: brown;
   fill: none;
-  stroke-width: 0.5em;;
+  stroke-width: 0.5em;
 }
 
 #eyes {
@@ -44,7 +44,11 @@ button {
   fill: orange;    
 }
 
-h1 {
-  display: inline-block;
-  cursor: pointer;
+header {
+  width: 30em;
+}
+
+
+meter {
+  width: 100%;
 }
