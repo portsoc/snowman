@@ -3,13 +3,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Snowman</title>
 <link rel="stylesheet" href="style.css">
-<script defer src="index.js"></script>
+<script defer type="module" src="index.js"></script>
 
 <header>
   <h1>Snowman</h1>
   <p>When the snowman is happy, he will raise his arms.</p>
   <p>Playing with the snowman makes him happy.</p>
   <p>Over time, the snowman's happiness will subside.</p>
+  <p>Happiness: <meter id="feelshappy" min=0 max=100 value=0></meter>
 </header>
 
 <button id="play">Play with the snowman!</button>
@@ -21,7 +22,7 @@
       <circle cx="30" r="10" />
     </g>
   </defs>
-  
+
   <path class="snow" id="body"
     d="M 0,150
       C-225,150 -150,-80 -95,-100

@@ -11,6 +11,7 @@ function play() {
 function adjustThings() {
   feels.happy = Math.max(0, --feels.happy);
   adjustImage();
+  adjustMeters();
 }
 
 function adjustImage() {
@@ -18,6 +19,10 @@ function adjustImage() {
   const rightarm = document.querySelector("#rightarm");
   leftarm.setAttribute("transform", `translate(60,-170) rotate(${-feels.happy+50})`);
   rightarm.setAttribute("transform", `translate(-60,-170) rotate(${feels.happy-50})`);
+}
+
+function adjustMeters() {
+  document.querySelector("#feelshappy").value = feels.happy;
 }
 
 function init() {

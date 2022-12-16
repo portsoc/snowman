@@ -33,7 +33,7 @@ svg {
 #arms {
   stroke: brown;
   fill: none;
-  stroke-width: 0.5em;;
+  stroke-width: 0.5em;
 }
 
 #eyes {
@@ -53,9 +53,8 @@ svg {
   stroke-width: 4px;  
 }
 
-h1 {
-  display: inline-block;
-  cursor: pointer;
+header {
+  width: 30em;
 }
 
 .fall {
@@ -65,4 +64,8 @@ h1 {
 @keyframes fall {
   0% { transform: translateY(-500%); }
   100% { transform: translateY(500%); }
+}
+
+meter {
+  width: 100%;
 }
