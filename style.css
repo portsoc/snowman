@@ -15,8 +15,15 @@ button {
   box-shadow: 0 0.25em 0.5em black;
 }
 
+svg {
+  stroke-linejoin: round;
+  stroke-linecap: round;
+}
+
 .snow {
   fill: white;
+  stroke: #444;
+  stroke-width: 4px;
 }
 
 .coal {
@@ -41,10 +48,21 @@ button {
 }
 
 #carrot {
-  fill: orange;    
+  fill: orange;
+  stroke: orange;  
+  stroke-width: 4px;  
 }
 
 h1 {
   display: inline-block;
   cursor: pointer;
+}
+
+.fall {
+  animation: fall 5s infinite linear;
+}
+
+@keyframes fall {
+  0% { transform: translateY(-500%); }
+  100% { transform: translateY(500%); }
 }

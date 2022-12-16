@@ -15,10 +15,6 @@
 <button id="play">Play with the snowman!</button>
 
 <svg width="500" height="700" viewbox="-250 -550 500 700">
-  <circle id="lowertorso" cx="0" cy="0" r="150" class="snow" />
-  <circle id="torso" cx="0" cy="-150" r="125" class="snow" />
-  <circle id="head" cx="0" cy="-300" r="100" class="snow" />
-
   <defs>
     <g id="eyes" class="coal">
       <circle cx="-30" r="10" />
@@ -26,6 +22,15 @@
     </g>
   </defs>
   
+  <path class="snow" id="body"
+    d="M 0,150
+      C-225,150 -150,-80 -95,-100
+      C-125,-120 -100,-225 -75,-225
+      C-100,-245 -100,-375 0,-375
+      C 100,-375 100,-245 75,-225
+      C 100,-225 125,-100 95,-100
+      C 150,-80 225,150 0,150" />
+
   <use href="#eyes" y="-300"></use>
 
   <g id="arms">
@@ -33,6 +38,6 @@
     <path id="rightarm" d="M0,0 L -100,0 M-100,10 L-75,0 -100,-25" transform="translate(-60,-170)"></path>
   </g>
 
-  <path id="carrot" d="m0,0 40,-10 0,-20" transform="translate(-40,-250)"></path> 
+  <path id="carrot" d="m0,0 40,-10 0,-20 z" transform="translate(-40,-250)"></path> 
 
 </svg>
