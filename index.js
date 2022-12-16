@@ -1,4 +1,4 @@
-import * as snowman from "./snowman.mjs";
+import * as snowman from "./lib/snowman.mjs";
 
 function init() {
     snowman.init()
