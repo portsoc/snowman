@@ -53,6 +53,12 @@ svg {
   stroke-width: 4px;  
 }
 
+#scarf {
+  fill: #00A0FF;
+  stroke: black;
+  stroke-width: 4px;
+}
+
 header {
   width: 30em;
 }
