@@ -1,4 +1,5 @@
 body {
+  box-sizing: border-box;
   font-family: sans-serif;
   background: #DDD;
   color: black;
@@ -6,6 +7,14 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+header, footer {
+  max-width: 30em;
+}
+
+meter {
+  width: 80vw;
 }
 
 button {
@@ -59,10 +68,6 @@ svg {
   stroke-width: 4px;
 }
 
-header {
-  width: 30em;
-}
-
 .fall {
   animation: fall 5s infinite linear;
 }
@@ -70,10 +75,6 @@ header {
 @keyframes fall {
   0% { transform: translateY(-500%); }
   100% { transform: translateY(500%); }
-}
-
-meter {
-  width: 100%;
 }
 
 #hat {
