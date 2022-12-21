@@ -75,3 +75,13 @@ header {
 meter {
   width: 100%;
 }
+
+#hat {
+  fill: #F5F5F5;
+  stroke: #444;
+  stroke-width: 4px;
+}
+
+#hatfelt {
+  fill: #92448F;
+}
