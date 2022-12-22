@@ -1,3 +1,7 @@
+:root {
+  --lean: 0;
+}
+
 body {
   box-sizing: border-box;
   font-family: sans-serif;
@@ -14,7 +18,7 @@ header, footer {
 }
 
 meter {
-  width: 80vw;
+  max-width: 80vw;
 }
 
 button {
@@ -27,6 +31,9 @@ button {
 svg {
   stroke-linejoin: round;
   stroke-linecap: round;
+  transform-origin: 250px 700px;
+  transform: rotate(var(--lean));
+  transition: all 0.5s;
 }
 
 .snow {
@@ -58,8 +65,8 @@ svg {
 
 #carrot {
   fill: orange;
-  stroke: orange;  
-  stroke-width: 4px;  
+  stroke: orange;
+  stroke-width: 4px;
 }
 
 #scarf {
